@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B23C65091A9B4C0D0006F8E1 /* EnteringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23C65081A9B4C0D0006F8E1 /* EnteringViewController.swift */; };
 		B29E02381A9B255100832FD0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29E02371A9B255100832FD0 /* AppDelegate.swift */; };
-		B29E023A1A9B255100832FD0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29E02391A9B255100832FD0 /* ViewController.swift */; };
 		B29E023D1A9B255100832FD0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B29E023B1A9B255100832FD0 /* Main.storyboard */; };
 		B29E023F1A9B255100832FD0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B29E023E1A9B255100832FD0 /* Images.xcassets */; };
 		B29E02421A9B255100832FD0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B29E02401A9B255100832FD0 /* LaunchScreen.xib */; };
@@ -30,11 +28,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B23C65081A9B4C0D0006F8E1 /* EnteringViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnteringViewController.swift; sourceTree = "<group>"; };
 		B29E02321A9B255100832FD0 /* DroppyMenuController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DroppyMenuController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B29E02361A9B255100832FD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B29E02371A9B255100832FD0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B29E02391A9B255100832FD0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B29E023C1A9B255100832FD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B29E023E1A9B255100832FD0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B29E02411A9B255100832FD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -64,15 +60,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B23C65011A9B36F60006F8E1 /* Example */ = {
-			isa = PBXGroup;
-			children = (
-				B29E02391A9B255100832FD0 /* ViewController.swift */,
-				B23C65081A9B4C0D0006F8E1 /* EnteringViewController.swift */,
-			);
-			name = Example;
-			sourceTree = "<group>";
-		};
 		B29E02291A9B255000832FD0 = {
 			isa = PBXGroup;
 			children = (
@@ -94,7 +81,6 @@
 		B29E02341A9B255100832FD0 /* DroppyMenuController */ = {
 			isa = PBXGroup;
 			children = (
-				B23C65011A9B36F60006F8E1 /* Example */,
 				B29E02591A9B256A00832FD0 /* DroppyMenu */,
 				B29E02371A9B255100832FD0 /* AppDelegate.swift */,
 				B29E023B1A9B255100832FD0 /* Main.storyboard */,
@@ -240,9 +226,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B29E023A1A9B255100832FD0 /* ViewController.swift in Sources */,
 				B29E02381A9B255100832FD0 /* AppDelegate.swift in Sources */,
-				B23C65091A9B4C0D0006F8E1 /* EnteringViewController.swift in Sources */,
 				B29E02651A9B25CE00832FD0 /* DroppyMenuViewController.swift in Sources */,
 				B29E02631A9B25CE00832FD0 /* DroppyMenuSegue.swift in Sources */,
 				B29E02641A9B25CE00832FD0 /* DroppyMenuView.swift in Sources */,
