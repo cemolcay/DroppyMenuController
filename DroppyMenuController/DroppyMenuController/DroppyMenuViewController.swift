@@ -20,9 +20,9 @@ class DroppyMenuViewController: UIViewController, DroppyMenuViewDelegate, UIColl
     }
     
     var currentViewController: UIViewController!
-    @IBOutlet var containerView: UIView!
+    var containerView: UIView!
     
-    private var menuView: DroppyMenuView!
+    var menuView: DroppyMenuView!
     private var animator: UIDynamicAnimator!
     private var gravity: UIGravityBehavior!
     private var collision: UICollisionBehavior!
@@ -36,14 +36,13 @@ class DroppyMenuViewController: UIViewController, DroppyMenuViewDelegate, UIColl
         assert(viewControllers.count > 0, "view controllers must be not empty")
         
         self.viewControllers = viewControllers
-        
-        containerView = UIView (frame: view.frame)
-        view.addSubview(containerView)
-        
         defaultInit()
     }
     
     func defaultInit () {
+        containerView = UIView (frame: view.frame)
+        view.addSubview(containerView)
+
         moveFirstViewController()
         
         menuView = DroppyMenuView (items: viewControllers.map( { return $0.title! } ))
@@ -118,7 +117,7 @@ class DroppyMenuViewController: UIViewController, DroppyMenuViewDelegate, UIColl
         animator = UIDynamicAnimator(referenceView: view)
 
         gravity = UIGravityBehavior(items: [menuView])
-        gravity.magnitude = 10
+        gravity.magnitude = menuView.appeareance.gravityMagnitude
         animator.addBehavior(gravity)
         
         collision = UICollisionBehavior(items: [menuView])
@@ -133,8 +132,8 @@ class DroppyMenuViewController: UIViewController, DroppyMenuViewDelegate, UIColl
         animator.removeAllBehaviors()
         UIView.animateWithDuration(0.5,
             delay: 0,
-            usingSpringWithDamping: 0.9,
-            initialSpringVelocity: 0.9,
+            usingSpringWithDamping: menuView.appeareance.springDamping,
+            initialSpringVelocity: menuView.appeareance.springVelocity,
             options: .AllowAnimatedContent,
             animations: { [unowned self] () -> Void in
                 self.menuView.bottom = self.view.top

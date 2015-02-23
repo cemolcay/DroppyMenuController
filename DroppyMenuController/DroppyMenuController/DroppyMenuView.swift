@@ -117,6 +117,8 @@ struct DroppyMenuViewAppeareance {
     var font: UIFont
     var backgroundColor: UIColor
     
+    var lineWidth: CGFloat
+    
     var gravityMagnitude: CGFloat
     var springVelocity: CGFloat
     var springDamping: CGFloat
@@ -126,11 +128,12 @@ extension DroppyMenuViewAppeareance {
     
     init () {
         self.tintColor = UIColor.whiteColor()
-        self.font = UIFont.systemFontOfSize(15)
-        self.backgroundColor = UIColor (white: 0, alpha: 0.2)
+        self.font = UIFont (name: "HelveticaNeue-Light", size: 20)!
+        self.backgroundColor = UIColor (white: 0, alpha: 0.5)
         self.gravityMagnitude = 10
         self.springDamping = 0.9
         self.springVelocity = 0.9
+        self.lineWidth = 1
     }
 }
 
@@ -145,7 +148,27 @@ class DroppyMenuView: UIView {
     // MARK: Properties
     
     var delegate: DroppyMenuViewDelegate?
-    var appeareance: DroppyMenuViewAppeareance!
+    var appeareance: DroppyMenuViewAppeareance! {
+        didSet {
+            backgroundColor = appeareance.backgroundColor
+            for view in subviews {
+                if let view = view as? UIButton {
+                    view.setTitleColor(appeareance.tintColor, forState: .Normal)
+                    view.titleLabel?.font = appeareance.font
+                    if let layer = view.layer.sublayers?[0] as? CAShapeLayer {
+                        layer.strokeColor = appeareance.tintColor.CGColor
+                        layer.lineWidth = appeareance.lineWidth
+                    } else if let layer = view.layer.sublayers?[1] as? CALayer {
+                        layer.backgroundColor = appeareance.tintColor.CGColor
+                        
+                        var f = layer.frame
+                        f.size.height = appeareance.lineWidth
+                        layer.frame = f
+                    }
+                }
+            }
+        }
+    }
     
     var isAnimating: Bool = false
     
@@ -178,7 +201,7 @@ class DroppyMenuView: UIView {
         close.y = currentY
         addSubview(close)
         
-        backgroundColor = UIColor (white: 0, alpha: 0.3)
+        backgroundColor = appeareance.backgroundColor
     }
     
     required init(coder aDecoder: NSCoder) {
@@ -192,11 +215,13 @@ class DroppyMenuView: UIView {
     func createItem (title: String, currentY: CGFloat, itemHeight: CGFloat) -> UIView {
         let button = UIButton (frame: CGRect (x: 0, y: currentY, width: frame.size.width, height: itemHeight))
         button.setTitle(title, forState: .Normal)
+        button.setTitleColor(appeareance.tintColor, forState: .Normal)
+        button.titleLabel?.font = appeareance.font
         button.addTarget(self, action: "itemPressed:", forControlEvents: .TouchUpInside)
         
         let sep = CALayer ()
-        sep.frame = CGRect (x: 0, y: button.h, width: button.w, height: 1)
-        sep.backgroundColor = UIColor.whiteColor().CGColor
+        sep.frame = CGRect (x: 0, y: button.h, width: button.w, height: appeareance.lineWidth)
+        sep.backgroundColor = appeareance.tintColor.CGColor
         button.layer.addSublayer(sep)
         
         return button
@@ -218,14 +243,9 @@ class DroppyMenuView: UIView {
         path.addLineToPoint(CGPoint (x: a, y: 0))
         
         close.path = path.CGPath
-        close.lineWidth = 3
-        close.strokeColor = UIColor.whiteColor().CGColor
+        close.lineWidth = appeareance.lineWidth
+        close.strokeColor = appeareance.tintColor.CGColor
         button.layer.addSublayer (close)
-        
-        let sep = CALayer ()
-        sep.frame = CGRect (x: 0, y: button.h, width: button.w, height: 1)
-        sep.backgroundColor = UIColor.whiteColor().CGColor
-        button.layer.addSublayer(sep)
         
         return button
     }

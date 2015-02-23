@@ -18,6 +18,13 @@ class MenuViewController: DroppyMenuViewController {
         let third = getViewController("Third")
         
         viewControllers = [first, second, third]
+        
+        var appear = DroppyMenuViewAppeareance ()
+        appear.font = UIFont (name: "HelveticaNeue-Light", size: 20)!
+        appear.tintColor = UIColor.whiteColor()
+        appear.backgroundColor = UIColor (white: 0, alpha: 0.5)
+        appear.lineWidth = 1
+        menuView.appeareance = appear
     }
     
     func getViewController (storyboardIdentifier: String) -> UIViewController {

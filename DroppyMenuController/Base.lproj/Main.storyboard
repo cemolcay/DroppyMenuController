@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7515.2" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="XRu-uV-eug">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7512"/>
     </dependencies>
     <scenes>
@@ -15,23 +16,8 @@
                     <view key="view" contentMode="scaleToFill" id="BFA-Rd-ib9">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cQC-DR-oH7" userLabel="Container">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="centerY" secondItem="cQC-DR-oH7" secondAttribute="centerY" id="ETt-SA-BzB"/>
-                            <constraint firstItem="cQC-DR-oH7" firstAttribute="width" secondItem="BFA-Rd-ib9" secondAttribute="width" id="OAl-BF-FuR"/>
-                            <constraint firstAttribute="centerX" secondItem="cQC-DR-oH7" secondAttribute="centerX" id="lwF-qU-wz8"/>
-                            <constraint firstItem="cQC-DR-oH7" firstAttribute="height" secondItem="BFA-Rd-ib9" secondAttribute="height" id="o5E-cR-jRf"/>
-                        </constraints>
                     </view>
-                    <connections>
-                        <outlet property="containerView" destination="cQC-DR-oH7" id="CrQ-Fq-0GG"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5f4-u0-bsu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
