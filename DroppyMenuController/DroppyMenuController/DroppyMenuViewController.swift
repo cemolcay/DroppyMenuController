@@ -43,14 +43,6 @@ class DroppyMenuViewController: UIViewController, DroppyMenuViewDelegate {
         defaultInit()
     }
     
-    required init(coder aDecoder: NSCoder) {
-        super.init (coder: aDecoder)
-    }
-    
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    }
-    
     func defaultInit () {
         moveFirstViewController()
         
@@ -59,8 +51,18 @@ class DroppyMenuViewController: UIViewController, DroppyMenuViewDelegate {
         
         menuView.bottom = view.top
         view.addSubview(menuView)
+        
+        view.bringSubviewToFront(menuView)
     }
     
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init (coder: aDecoder)
+    }
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
     
     
     // MARK: View Controller Management

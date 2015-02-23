@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B23C650C1A9B61D50006F8E1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23C650B1A9B61D50006F8E1 /* ViewController.swift */; };
+		B23C650E1A9B62770006F8E1 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23C650D1A9B62770006F8E1 /* MenuViewController.swift */; };
 		B29E02381A9B255100832FD0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29E02371A9B255100832FD0 /* AppDelegate.swift */; };
 		B29E023D1A9B255100832FD0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B29E023B1A9B255100832FD0 /* Main.storyboard */; };
 		B29E023F1A9B255100832FD0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B29E023E1A9B255100832FD0 /* Images.xcassets */; };
@@ -28,6 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B23C650B1A9B61D50006F8E1 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B23C650D1A9B62770006F8E1 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		B29E02321A9B255100832FD0 /* DroppyMenuController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DroppyMenuController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B29E02361A9B255100832FD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B29E02371A9B255100832FD0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +64,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B23C650A1A9B61C30006F8E1 /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				B23C650D1A9B62770006F8E1 /* MenuViewController.swift */,
+				B23C650B1A9B61D50006F8E1 /* ViewController.swift */,
+			);
+			name = Example;
+			sourceTree = "<group>";
+		};
 		B29E02291A9B255000832FD0 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +94,7 @@
 		B29E02341A9B255100832FD0 /* DroppyMenuController */ = {
 			isa = PBXGroup;
 			children = (
+				B23C650A1A9B61C30006F8E1 /* Example */,
 				B29E02591A9B256A00832FD0 /* DroppyMenu */,
 				B29E02371A9B255100832FD0 /* AppDelegate.swift */,
 				B29E023B1A9B255100832FD0 /* Main.storyboard */,
@@ -226,6 +240,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B23C650C1A9B61D50006F8E1 /* ViewController.swift in Sources */,
+				B23C650E1A9B62770006F8E1 /* MenuViewController.swift in Sources */,
 				B29E02381A9B255100832FD0 /* AppDelegate.swift in Sources */,
 				B29E02651A9B25CE00832FD0 /* DroppyMenuViewController.swift in Sources */,
 				B29E02631A9B25CE00832FD0 /* DroppyMenuSegue.swift in Sources */,
