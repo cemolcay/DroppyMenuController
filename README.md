@@ -12,7 +12,7 @@ Can be used with either storyboards or manual.
 Demo
 ----
 
-![alt tag]()
+![alt tag](https://raw.githubusercontent.com/cemolcay/DroppyMenuController/master/demo.gif)
 
 Installing
 ----------
