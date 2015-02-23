@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DroppyMenuViewController: UIViewController, DroppyMenuViewDelegate {
+class DroppyMenuViewController: UIViewController, DroppyMenuViewDelegate, UICollisionBehaviorDelegate {
     
     
     // MARK: Properties
@@ -108,8 +108,15 @@ class DroppyMenuViewController: UIViewController, DroppyMenuViewDelegate {
     // MARK: Menu
     
     func openMenu () {
-        animator = UIDynamicAnimator(referenceView: view)
         
+        if menuView.isAnimating {
+            return
+        }
+        
+        menuView.isAnimating = true
+        
+        animator = UIDynamicAnimator(referenceView: view)
+
         gravity = UIGravityBehavior(items: [menuView])
         gravity.magnitude = 10
         animator.addBehavior(gravity)
@@ -118,10 +125,12 @@ class DroppyMenuViewController: UIViewController, DroppyMenuViewDelegate {
         collision.addBoundaryWithIdentifier ("bottom",
             fromPoint: CGPoint (x: 0, y: view.h),
             toPoint: CGPoint (x: view.w, y: view.h))
+        collision.collisionDelegate = self
         animator.addBehavior(collision)
     }
     
     func closeMenu () {
+        animator.removeAllBehaviors()
         UIView.animateWithDuration(0.5,
             delay: 0,
             usingSpringWithDamping: 0.9,
@@ -130,11 +139,11 @@ class DroppyMenuViewController: UIViewController, DroppyMenuViewDelegate {
             animations: { [unowned self] () -> Void in
                 self.menuView.bottom = self.view.top
             },
-            completion: { finished in
-                println("spring complate")
+            completion: { [unowned self] finished in
+                self.menuView.isAnimating = false
             })
     }
-    
+
     
     
     // MARK: DroppyMenuViewDelegate
@@ -147,4 +156,19 @@ class DroppyMenuViewController: UIViewController, DroppyMenuViewDelegate {
         closeMenu()
         moveViewController(viewControllers[index])
     }
+
+
+    
+    // MARK: UICollisionBehaviourDelegate 
+    func collisionBehavior(
+        behavior: UICollisionBehavior,
+        endedContactForItem item: UIDynamicItem,
+        withBoundaryIdentifier identifier: NSCopying) {
+
+        if identifier as? String == "bottom" {
+            menuView.isAnimating = false
+            println("bottom")
+        }
+    }
+
 }

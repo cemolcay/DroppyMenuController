@@ -147,6 +147,8 @@ class DroppyMenuView: UIView {
     var delegate: DroppyMenuViewDelegate?
     var appeareance: DroppyMenuViewAppeareance!
     
+    var isAnimating: Bool = false
+    
     
     
     // MARK: Lifecycle
@@ -233,10 +235,20 @@ class DroppyMenuView: UIView {
     // MARK: Action
     
     func itemPressed (sender: UIButton) {
+        
+        if isAnimating {
+            return
+        }
+        
         delegate?.droppyMenu(self, didItemPressedAtIndex: sender.tag)
     }
     
     func closePressed (sender: UIButton) {
+        
+        if isAnimating {
+            return
+        }
+        
         delegate?.droppyMenuDidClosePressed(self)
     }
 

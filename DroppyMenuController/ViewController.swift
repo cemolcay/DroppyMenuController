@@ -12,7 +12,6 @@ class ViewController: UIViewController {
 
     @IBAction func openMenuPressed (sender: UIButton) {
         let parent = parentViewController as! MenuViewController
-        println(parent)
         parent.openMenu()
     }
     
