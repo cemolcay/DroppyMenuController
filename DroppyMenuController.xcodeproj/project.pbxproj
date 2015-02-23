@@ -14,7 +14,6 @@
 		B29E023F1A9B255100832FD0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B29E023E1A9B255100832FD0 /* Images.xcassets */; };
 		B29E02421A9B255100832FD0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B29E02401A9B255100832FD0 /* LaunchScreen.xib */; };
 		B29E024E1A9B255100832FD0 /* DroppyMenuControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29E024D1A9B255100832FD0 /* DroppyMenuControllerTests.swift */; };
-		B29E02631A9B25CE00832FD0 /* DroppyMenuSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29E02601A9B25CE00832FD0 /* DroppyMenuSegue.swift */; };
 		B29E02641A9B25CE00832FD0 /* DroppyMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29E02611A9B25CE00832FD0 /* DroppyMenuView.swift */; };
 		B29E02651A9B25CE00832FD0 /* DroppyMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29E02621A9B25CE00832FD0 /* DroppyMenuViewController.swift */; };
 /* End PBXBuildFile section */
@@ -41,7 +40,6 @@
 		B29E02471A9B255100832FD0 /* DroppyMenuControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DroppyMenuControllerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B29E024C1A9B255100832FD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B29E024D1A9B255100832FD0 /* DroppyMenuControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DroppyMenuControllerTests.swift; sourceTree = "<group>"; };
-		B29E02601A9B25CE00832FD0 /* DroppyMenuSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DroppyMenuSegue.swift; path = DroppyMenuController/DroppyMenuSegue.swift; sourceTree = "<group>"; };
 		B29E02611A9B25CE00832FD0 /* DroppyMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DroppyMenuView.swift; path = DroppyMenuController/DroppyMenuView.swift; sourceTree = "<group>"; };
 		B29E02621A9B25CE00832FD0 /* DroppyMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DroppyMenuViewController.swift; path = DroppyMenuController/DroppyMenuViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -135,7 +133,6 @@
 			children = (
 				B29E02621A9B25CE00832FD0 /* DroppyMenuViewController.swift */,
 				B29E02611A9B25CE00832FD0 /* DroppyMenuView.swift */,
-				B29E02601A9B25CE00832FD0 /* DroppyMenuSegue.swift */,
 			);
 			name = DroppyMenu;
 			sourceTree = "<group>";
@@ -244,7 +241,6 @@
 				B23C650E1A9B62770006F8E1 /* MenuViewController.swift in Sources */,
 				B29E02381A9B255100832FD0 /* AppDelegate.swift in Sources */,
 				B29E02651A9B25CE00832FD0 /* DroppyMenuViewController.swift in Sources */,
-				B29E02631A9B25CE00832FD0 /* DroppyMenuSegue.swift in Sources */,
 				B29E02641A9B25CE00832FD0 /* DroppyMenuView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

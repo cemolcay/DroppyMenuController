@@ -79,3 +79,51 @@ Initilize `window` property and set rootViewController as your menu controller.
         return true
     }
 ```
+
+
+DroppyMenuViewAppeareance
+-------------------------
+
+``` swift
+	struct DroppyMenuViewAppeareance {
+	    
+	    var tintColor: UIColor
+	    var font: UIFont
+	    var backgroundColor: UIColor
+	    
+	    var lineWidth: CGFloat
+	    
+	    var gravityMagnitude: CGFloat
+	    var springVelocity: CGFloat
+	    var springDamping: CGFloat
+	}
+
+```
+
+The default appeareance is 
+
+``` swift
+	extension DroppyMenuViewAppeareance {
+	    
+	    init () {
+	        self.tintColor = UIColor.whiteColor()
+	        self.font = UIFont (name: "HelveticaNeue-Light", size: 20)!
+	        self.backgroundColor = UIColor (white: 0, alpha: 0.5)
+	        self.gravityMagnitude = 10
+	        self.springDamping = 0.9
+	        self.springVelocity = 0.9
+	        self.lineWidth = 1
+	    }
+	}
+```
+
+You can change appeareance after creating the menu controller.
+
+``` swift
+        var appear = DroppyMenuViewAppeareance ()
+        appear.font = UIFont (name: "HelveticaNeue-Light", size: 20)!
+        appear.tintColor = UIColor.whiteColor()
+        appear.backgroundColor = UIColor (white: 0, alpha: 0.5)
+        appear.lineWidth = 1
+        menuController.menuView.appeareance = appear
+```

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>E359182F-EDF0-467D-A1D2-AD3794B91ED3</string>
+	<key>IDESourceControlProjectName</key>
+	<string>DroppyMenuController</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>86A811E9A5769D0C6C573CF393D0C02B7BD9EFA1</key>
+		<string>https://github.com/cemolcay/DroppyMenuController.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>DroppyMenuController.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>86A811E9A5769D0C6C573CF393D0C02B7BD9EFA1</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/cemolcay/DroppyMenuController.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>86A811E9A5769D0C6C573CF393D0C02B7BD9EFA1</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>86A811E9A5769D0C6C573CF393D0C02B7BD9EFA1</string>
+			<key>IDESourceControlWCCName</key>
+			<string>DroppyMenuController</string>
+		</dict>
+	</array>
+</dict>
+</plist>
