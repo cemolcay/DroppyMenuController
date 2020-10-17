@@ -32,7 +32,7 @@ class DroppyMenuViewController: UIViewController, DroppyMenuViewDelegate, UIColl
     // MARK: Lifecycle
     
     init (viewControllers: [UIViewController]) {
-        super.init ()
+        super.init(nibName: nil, bundle: nil)
         assert(viewControllers.count > 0, "view controllers must be not empty")
         
         self.viewControllers = viewControllers
@@ -55,11 +55,11 @@ class DroppyMenuViewController: UIViewController, DroppyMenuViewDelegate, UIColl
     }
     
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init (coder: aDecoder)
     }
     
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
     
@@ -70,11 +70,11 @@ class DroppyMenuViewController: UIViewController, DroppyMenuViewDelegate, UIColl
     func moveFirstViewController () {
         currentViewController = viewControllers[0]
         
-        currentViewController.willMoveToParentViewController(self)
-        addChildViewController(currentViewController)
+        currentViewController.willMove(toParent: self)
+        addChild(currentViewController)
         currentViewController.view.frame = containerView.frame
         containerView.addSubview(currentViewController.view)
-        currentViewController.didMoveToParentViewController(self)
+        currentViewController.didMove(toParent: self)
     }
     
     func moveViewController (to: UIViewController) {
@@ -83,22 +83,22 @@ class DroppyMenuViewController: UIViewController, DroppyMenuViewDelegate, UIColl
             return
         }
         
-        addChildViewController(to)
-        currentViewController!.willMoveToParentViewController(nil)
+        addChild(to)
+        currentViewController!.willMove(toParent: nil)
         
         to.view.frame = currentViewController.view.frame
         
-        transitionFromViewController (currentViewController,
-            toViewController: to,
+        transition (from: currentViewController,
+                    to: to,
             duration: 0.7,
-            options: .TransitionCrossDissolve,
+            options: .transitionCrossDissolve,
             animations: { [unowned self] () -> Void in
                 
             },
             completion: { [unowned self] finished -> Void in
-                self.currentViewController.removeFromParentViewController()
+                self.currentViewController.removeFromParent()
                 self.currentViewController = to
-                to.didMoveToParentViewController(self)
+                to.didMove(toParent: self)
         })
     }
     
@@ -121,20 +121,21 @@ class DroppyMenuViewController: UIViewController, DroppyMenuViewDelegate, UIColl
         animator.addBehavior(gravity)
         
         collision = UICollisionBehavior(items: [menuView])
-        collision.addBoundaryWithIdentifier ("bottom",
-            fromPoint: CGPoint (x: 0, y: view.h),
-            toPoint: CGPoint (x: view.w, y: view.h))
+        
+        collision.addBoundary(withIdentifier: "bottom" as NSCopying,
+                              from: CGPoint (x: 0, y: view.h),
+                              to: CGPoint (x: view.w, y: view.h))
         collision.collisionDelegate = self
         animator.addBehavior(collision)
     }
     
     func closeMenu () {
         animator.removeAllBehaviors()
-        UIView.animateWithDuration(0.5,
+        UIView.animate(withDuration: 0.5,
             delay: 0,
             usingSpringWithDamping: menuView.appeareance.springDamping,
             initialSpringVelocity: menuView.appeareance.springVelocity,
-            options: .AllowAnimatedContent,
+            options: .allowAnimatedContent,
             animations: { [unowned self] () -> Void in
                 self.menuView.bottom = self.view.top
             },
@@ -153,20 +154,16 @@ class DroppyMenuViewController: UIViewController, DroppyMenuViewDelegate, UIColl
     
     func droppyMenu(droppyMenu: DroppyMenuView, didItemPressedAtIndex index: Int) {
         closeMenu()
-        moveViewController(viewControllers[index])
+        moveViewController(to: viewControllers[index])
     }
 
 
     
-    // MARK: UICollisionBehaviourDelegate 
-    func collisionBehavior(
-        behavior: UICollisionBehavior,
-        endedContactForItem item: UIDynamicItem,
-        withBoundaryIdentifier identifier: NSCopying) {
-
+    // MARK: UICollisionBehaviourDelegate
+    func collisionBehavior(_ behavior: UICollisionBehavior, endedContactFor item: UIDynamicItem, withBoundaryIdentifier identifier: NSCopying?) {
         if identifier as? String == "bottom" {
             menuView.isAnimating = false
-            println("bottom")
+            print("bottom")
         }
     }
 
