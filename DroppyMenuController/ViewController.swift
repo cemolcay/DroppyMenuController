@@ -9,10 +9,9 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    @IBAction func openMenuPressed (sender: UIButton) {
-        let parent = parentViewController as! MenuViewController
-        parent.openMenu()
-    }
     
+    @IBAction func openMenuPressed(_ sender: UIButton) {
+        let parentController = parent as! MenuViewController
+        parentController.openMenu()
+    }
 }
