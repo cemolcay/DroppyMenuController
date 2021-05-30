@@ -61,7 +61,7 @@ Create a subclass of `DroppyMenuViewController` and in its `viewDidLoad:` method
 
 In your `AppDelegate`'s `application:didFinishLaunchingWithOptions:` method, create your view controllers.  
 Then create a `DroppyMenuViewController` with that view controllers.  
-Initilize `window` property and set rootViewController as your menu controller.
+Initialize `window` property and set rootViewController as your menu controller.
    
 ``` swift
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
